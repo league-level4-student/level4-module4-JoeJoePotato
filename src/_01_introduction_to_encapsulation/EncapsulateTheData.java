@@ -70,7 +70,7 @@ public class EncapsulateTheData {
 	
 	public static void setObi(Object o) {
 		if(o instanceof String) {
-			memberObj=new Object();
+			memberObj=null;
 		}else {
 			memberObj=o;
 		}
