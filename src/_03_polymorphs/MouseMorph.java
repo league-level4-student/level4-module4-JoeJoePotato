@@ -3,15 +3,14 @@ package _03_polymorphs;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class BluePolymorph extends Polymorph{
-
-	BluePolymorph(int x, int y, int h, int w) {
+public class MouseMorph extends Polymorph{
+	MouseMorph(int x, int y, int h, int w) {
 		super(x, y, h, w);
 	}
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.blue);
+		g.setColor(Color.red);
 		g.fillRect(getX(), getY(), getW(), getH());
 	}
 
@@ -20,5 +19,4 @@ public class BluePolymorph extends Polymorph{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 }

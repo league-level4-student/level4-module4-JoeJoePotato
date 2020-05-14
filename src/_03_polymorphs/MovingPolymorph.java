@@ -18,4 +18,10 @@ public class MovingPolymorph extends Polymorph{
 		setY(getY()+r.nextInt(20)-r.nextInt(20));
 		g.fillRect(getX(), getY(), getW(), getH());
 	}
+
+	@Override
+	protected boolean isPane() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

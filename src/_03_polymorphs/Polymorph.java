@@ -44,4 +44,6 @@ public abstract class Polymorph {
     public void setH(int n) {
     	height=n;
     }
+
+	protected abstract boolean isPane();
 }

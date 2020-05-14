@@ -14,4 +14,10 @@ package _03_polymorphs;
 			g.setColor(Color.red);
 			g.fillRect(getX(), getY(), getW(), getH());
 		}
+
+		@Override
+		protected boolean isPane() {
+			// TODO Auto-generated method stub
+			return false;
+		}
 }

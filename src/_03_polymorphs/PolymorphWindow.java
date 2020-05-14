@@ -5,14 +5,17 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements ActionListener{
+public class PolymorphWindow extends JPanel implements ActionListener, MouseListener{
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;
     
@@ -39,11 +42,11 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 Random r=new Random();
    	 ArrayList<Polymorph> ps=new ArrayList<Polymorph>();
     one=new RedPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
-  four=new RedPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
+  four=new PanePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    two=new BluePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
-   three=new BluePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
+   three=new MouseMorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    five=new MovingPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
-   	 six=new MovingPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
+   	 six=new ImagePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    	 ps.add(one);
    	 ps.add(two);
    	 ps.add(three);
@@ -52,6 +55,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	ps.add(six);
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
+   	 window.addMouseListener(this);
     }
     
     public void paintComponent(Graphics g){
@@ -79,4 +83,41 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	six.update();
    	 
     }
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+	 if(e.getX()==two.getX() && e.getY()==two.getY()) {
+		 if(two.isPane()==true) {
+			JOptionPane.showMessageDialog(null, "good job"); 
+		 }
+	}
+	 three.setX(e.getX());
+	 three.setY(e.getY());
+	 
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
