@@ -42,8 +42,8 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
    	 Random r=new Random();
    	 ArrayList<Polymorph> ps=new ArrayList<Polymorph>();
     one=new RedPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
-  four=new PanePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
-   two=new BluePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
+  four=new BluePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
+   two=new PanePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    three=new MouseMorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    five=new MovingPolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
    	 six=new ImagePolymorph(r.nextInt(300),r.nextInt(300),r.nextInt(200),r.nextInt(200));
@@ -87,9 +87,11 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-	 if(e.getX()==two.getX() && e.getY()==two.getY()) {
+	 if(e.getX()>=two.getX() && e.getX()<= two.getX()+two.getH()) {
+		 if(e.getY()>=two.getY() && e.getY()<= two.getY()+two.getY()) {
 		 if(two.isPane()==true) {
 			JOptionPane.showMessageDialog(null, "good job"); 
+		 }
 		 }
 	}
 	 three.setX(e.getX());

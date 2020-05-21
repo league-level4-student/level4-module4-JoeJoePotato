@@ -12,6 +12,6 @@ Done :)
 Done :)
 7. Let's create more Polymorphs! Create a new sub-class of Polymorphs for each of the following…
 	a) Create a Polymorph that moves in a circle. hint: Math.sin() Math.cos()
-	b) Create a Polymorph that follows your mouse.
-	c) Create a Polymorph that displays an image.
+	b) Create a Polymorph that follows your mouse. √
+	c) Create a Polymorph that displays an image.  √
 	d) Create a Polymorph that displays a JOptionPane message dialog when clicked.
