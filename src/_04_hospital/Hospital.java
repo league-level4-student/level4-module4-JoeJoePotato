@@ -13,7 +13,13 @@ ArrayList <Patient> patients=new ArrayList <Patient> ();
 
 	public void addPatient(Patient patient) {
 		// TODO Auto-generated method stub
-		
+		patients.add(patient);
+		for (int i = 0; i < doctors.size(); i++) {
+		if(doctors.get(i).getPatients().size()<3) {
+			doctors.get(i).assignPatient(patient);
+		break;
+		}
+		}
 	}
 
 	public void addDoctor(Doctor d) {
@@ -21,9 +27,14 @@ ArrayList <Patient> patients=new ArrayList <Patient> ();
 		doctors.add(d);
 	}
 
-	public List<Doctor> getPatients() {
+	public ArrayList<Patient> getPatients() {
 		// TODO Auto-generated method stub
-		return null;
+		return patients;
+	}
+
+	public List<Doctor> getDoctors() {
+		// TODO Auto-generated method stub
+		return doctors;
 	}
 
 }
