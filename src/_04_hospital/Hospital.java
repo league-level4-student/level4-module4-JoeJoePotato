@@ -6,19 +6,15 @@ import java.util.List;
 public class Hospital {
 ArrayList <Doctor> doctors=new ArrayList <Doctor> ();
 ArrayList <Patient> patients=new ArrayList <Patient> ();
-	public void assignPatientsToDoctors() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	public void addPatient(Patient patient) {
 		// TODO Auto-generated method stub
 		patients.add(patient);
 		for (int i = 0; i < doctors.size(); i++) {
-		if(doctors.get(i).getPatients().size()<3) {
-			doctors.get(i).assignPatient(patient);
-		break;
-		}
+			try {
+				doctors.get(i).assignPatient(patient);
+			} catch (DoctorFullException dfe) {
+			}
 		}
 	}
 

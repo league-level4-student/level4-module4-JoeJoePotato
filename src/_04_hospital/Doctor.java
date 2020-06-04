@@ -9,11 +9,14 @@ public class Doctor {
 
 ArrayList <Patient> patients=new ArrayList<Patient>();
 
-public void assignPatient(Patient patient) {
+public void assignPatient(Patient patient) throws DoctorFullException {
 	// TODO Auto-generated method stub
-	if(patients.size()<3) {
+	if(patients.size()<3 && patient.assigned==false) {
 	patients.add(patient);
 	patient.assignedto=this;
+	patient.assigned=true;
+	}else {	
+		throw new DoctorFullException();
 	}
 	}
 
